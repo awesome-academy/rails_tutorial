@@ -13,3 +13,5 @@
 Truy cập đường dẫn http://localhost:3000/ hiển thị Rails là thành công
 
 
+#3. Huong dan chay du an
+
