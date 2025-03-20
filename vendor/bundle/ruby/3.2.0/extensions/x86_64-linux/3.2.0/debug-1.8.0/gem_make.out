@@ -1,0 +1,19 @@
+current directory: /home/gi/Sample_App/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
+/home/gi/.rvm/rubies/ruby-3.2.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/gi/Sample_App/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250320-70034-r65x05 sitelibdir\=./.gem.20250320-70034-r65x05 clean
+
+current directory: /home/gi/Sample_App/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250320-70034-r65x05 sitelibdir\=./.gem.20250320-70034-r65x05
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/gi/Sample_App/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250320-70034-r65x05 sitelibdir\=./.gem.20250320-70034-r65x05 install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20250320-70034-r65x05/debug
+
+current directory: /home/gi/Sample_App/vendor/bundle/ruby/3.2.0/gems/debug-1.8.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250320-70034-r65x05 sitelibdir\=./.gem.20250320-70034-r65x05 clean
