@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get 'pages/home'
+  get 'pages/help'
+  get 'pages/contact'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # Hoặc alias
+  # get '/help', to: 'pages#help'
+  # get '/contact', to: 'pages#contact'
+
+  root 'pages#home'
+
+  get "/signup", to: "users#new"
+  post "/signup", to: "users#create"
+  resources :users, only: :show
+  
 end
