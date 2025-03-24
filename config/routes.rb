@@ -8,4 +8,9 @@ Rails.application.routes.draw do
   # get '/contact', to: 'pages#contact'
 
   root 'pages#home'
+
+  get "/signup", to: "users#new"
+  post "/signup", to: "users#create"
+  resources :users, only: :show
+  
 end

@@ -42,9 +42,14 @@
   </div>
 </nav>
 
-    <!-- Phần nội dung của từng trang con -->
+    
     <div class="container mt-4">
+    <% flash.each do |messages_type, message| %>
+      <div class= "alert alert-<%= messages_type %>"><%= message %></div>
+      <% end %>
+      
       <%= yield %>
+      
     </div>
   </body>
 </html>

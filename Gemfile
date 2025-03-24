@@ -76,4 +76,6 @@ group :test do
 end
 
 gem 'sassc-rails'
+gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
 
