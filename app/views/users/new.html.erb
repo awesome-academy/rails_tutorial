@@ -1,0 +1,33 @@
+<% provide :title, "Signup"  %>
+<h1>Sign up </h1>
+<div class= "row">
+<div class= "col -md-6 col -md-offset-3">
+<%= form_for @user, url: signup_path do |f| %>
+    <%= render "shared/error_messages"%>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.label :password_confirmation, t("confirmation") %>
+
+    <%= f.password_field :password_confirmation %>
+
+    <div class="form-group">
+    <%= f.label :birthday, "Birthday" %>
+    <%= f.date_select :birthday, start_year: Date.today.year - 100, end_year: Date.today.year, order: [:day, :month, :year], prompt: { day: 'Select Day', month: 'Select Month', year: 'Select Year' }, class: "form-control" %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :gender, "Gender" %>
+    <%= f.select :gender, options_for_select([['Female', 'female'], ['Male', 'male'], ['Other', 'other']], f.object.gender), { prompt: "Select Gender" }, class: "form-control" %>
+  </div>
+  
+    
+    <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+    </div>
+    
+
+    
