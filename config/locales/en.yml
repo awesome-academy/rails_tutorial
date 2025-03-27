@@ -31,3 +31,21 @@
 
 en:
   hello: "Hello world"
+
+  pages:
+    home:
+      welcome_message: "Welcome to the Sample App"
+      description: "This is the home page for the sample application"
+      sign_up: "Sign up now!"
+      rails_tutorial: "Ruby on Rails Tutorial !"
+
+  layouts:
+    navbar:
+      brand: "SAMPLE APP"
+      home: "Home"
+      help: "Help"
+      account: "Account"
+      log_in: "Log in"
+      log_out: "Log out"
+      profile: "Profile"
+      settings: "Setting"
