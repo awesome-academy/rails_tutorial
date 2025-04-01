@@ -1,9 +1,8 @@
 class User < ApplicationRecord
     has_secure_password
-    validate :birthday_within_last_100years
+    validate :birthday_within_last_100years, if: -> { birthday.present? }
     attr_accessor :remember_token
 
-    # Returns the hash digest of the given string.
     def User.digest string
         cost = if ActiveModel::SecurePassword.min_cost
             BCrypt::Engine::MIN_COST
@@ -30,15 +29,30 @@ class User < ApplicationRecord
     def birthday_within_last_100years
         return unless birthday.present?
         if birthday < 100.years.ago.to_date
-            errors.add(:birthday, "must be within the last 100 years")
+            errors.add(:birthday,I18n.t( "users.errors.birthday_old"))
         end
     end
     validates :name, presence: true
-
-
     validates :email, presence: true, uniqueness: true
+<<<<<<< HEAD
 
 
-    validates :gender, presence: true, inclusion: { in: ['female', 'male', 'other'] }
+    validates :gender, inclusion: { in: ['female', 'male', 'other'], allow_blank: true }
+<<<<<<< HEAD
 
+    validates :name, presence: true, length: { minimum: 6 }
+    validates :password, presence: true, length: { minimum: 6 }, on: :create
+
+=======
+>>>>>>> 47472a4 (chapter10)
+
+    validates :name, presence: true, length: { minimum: 6 }
+    validates :password, presence: true, length: { minimum: 6 }, on: :create
+
+
+=======
+    validates :gender, inclusion: { in: ['female', 'male', 'other'], allow_blank: true }
+    validates :name, presence: true, length: { minimum: 6 }
+    validates :password, presence: true, length: { minimum: 6 }, on: :create
+>>>>>>> 26773bf (chapter10)
 end

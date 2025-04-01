@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <!-- Gọi file CSS (đã bundle) -->
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <!-- Gọi file JS (đã bundle) -->
@@ -16,6 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <%= javascript_importmap_tags %>
+
   </head>
 
   <body>
@@ -29,23 +29,21 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- ms-auto đẩy menu sang phải -->
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <!-- Mục Home -->
             <li class="nav-item">
               <%= link_to t("layouts.navbar.home"), root_path, class: "nav-link" %>
             </li>
-            <!-- Mục Help -->
             <li class="nav-item">
               <%= link_to t("layouts.navbar.help"), pages_help_path, class: "nav-link" %>
             </li>
             <% if logged_in? %>
-              <!-- Đã đăng nhập => Hiển thị Account -->
+             <li><%= link_to t("layouts.navbar.users"), user_path(current_user), class: "dropdown-item" %></li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarAccount" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <%= t("layouts.navbar.account") %>
+                 <%= t("layouts.navbar.account") %>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarAccount">
                   <li><%= link_to t("layouts.navbar.profile"), current_user, class: "dropdown-item" %></li>
-                  <li><%= link_to t("layouts.navbar.settings"), "#", class: "dropdown-item" %></li>
+                  <li><%= link_to t("layouts.navbar.settings"), edit_user_path(current_user), class: "dropdown-item" %></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><%= link_to t("layouts.navbar.log_out"), logout_path, data: { turbo_method: :delete }, class: "dropdown-item" %></li>
                 </ul>

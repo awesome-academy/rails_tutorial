@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get "pages/home"
   get "pages/help"
   get "pages/contact"
+  get '/logout', to: 'sessions#destroy'
+
 
   # Hoặc alias
   # get '/help', to: 'pages#help'
@@ -16,6 +18,7 @@ Rails.application.routes.draw do
   post "/signup", to: "users#create"
 
   get "/account", to: "accounts#show", as: "account"
-  resources :users, only: :show
+  resources :users, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+
 
 end
