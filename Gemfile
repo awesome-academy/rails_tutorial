@@ -33,6 +33,7 @@ gem "webpacker", "~> 5.4"
 gem "sassc-rails"
 gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
 gem "pagy"
+gem "figaro"
 # Use Sass to process CSS
 # gem "sassc-rails"
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html]

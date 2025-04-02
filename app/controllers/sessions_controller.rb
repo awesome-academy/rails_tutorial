@@ -24,10 +24,16 @@ class SessionsController < ApplicationController
       def create
         user = User.find_by(email: params.dig(:session, :email)&.downcase)
         if user && user.authenticate(params.dig(:session, :password))
-          log_in user
-          flash[:success] = t("sessions.create.success")
-          params.dig(:session, :remember_me) == "1" ? remember(user) : forget(user)
-          redirect_back_or user
+          if user.activated?
+            forwarding_url = session[:forwarding_url]
+            reset_sessionparams
+            [:session][:remember_me] == '1' ? remember(user) : forget(user)
+            log_in user
+            redirect_to forwarding_url || user
+            else
+              flash[:warning] = "Account not activated. Check your email for the activationlink."
+              redirect_to root_url, status: :see_other
+            end
 
         else
           flash.now[:danger] = t "invalid_email_password_combination"
@@ -36,7 +42,7 @@ class SessionsController < ApplicationController
       end
 
       def destroy
-        log_out
+        log_out 
         redirect_to root_path
       end
     end

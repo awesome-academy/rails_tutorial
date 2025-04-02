@@ -22,14 +22,13 @@ class UsersController < ApplicationController
             end
 
             def create
-                    @user = User.new(user_params)
-                    if @user.save
-                      # do something
-                      log_in @user
-                      flash[:success] = "User created successufully!"
-                      redirect_to @user
-             else
-              render :new
+                  @user = User.new(user_params)
+                  if @user.save
+                    @user.send_activation_email
+                    flash[:info] = "Please check your email to activate your account."
+                    redirect_to root_url, status: :see_other
+              else
+                render :new
             end
           end
 

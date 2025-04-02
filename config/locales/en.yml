@@ -1,13 +1,11 @@
 en:
   hello: "Hello world"
-
   pages:
     home:
       welcome_message: "Welcome to the Sample App"
       description: "This is the home page for the sample application"
       sign_up: "Sign up now!"
       rails_tutorial: "Ruby on Rails Tutorial !"
-
   layouts:
     navbar:
       brand: "SAMPLE APP"
@@ -18,7 +16,6 @@ en:
       log_out: "Log out"
       profile: "Profile"
       settings: "Settings"
-
   users:
     edit:
       title: "Edit user"
@@ -32,28 +29,14 @@ en:
       change_avatar: "Change"
     delete: "Delete"
     confirm_delete: "Are you sure?"
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
     errors:
-    birthday_old: "Birthday must be within the last 100 years"
->>>>>>> 26773bf (chapter10)
->>>>>>> 47472a4 (chapter10)
-
+      birthday_old: "Birthday must be within the last 100 years"
   pagy:
     nav:
       previous: "Previous"
       next: "Next"
       page: "Page %{page}"
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-sessions:
+  sessions:
     create:
       success: "Login successful!"
       failure: "Invalid email or password"
-
->>>>>>> 26773bf (chapter10)
->>>>>>> 47472a4 (chapter10)
