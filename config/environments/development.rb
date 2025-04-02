@@ -29,7 +29,6 @@ Rails.application.configure do
     }
   else
     config.action_controller.perform_caching = false
-
     config.cache_store = :null_store
   end
 
@@ -37,7 +36,18 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+
+  # Cấu hình gửi email qua Mailtrap
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.mailtrap.io',
+    port: 2525,
+    user_name: ENV['MAILTRAP_USERNAME'], # Đảm bảo đã có biến môi trường này
+    password: ENV['MAILTRAP_PASSWORD'],  # Đảm bảo đã có biến môi trường này
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
 
   config.action_mailer.perform_caching = false
 
@@ -67,4 +77,12 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+  Rack::MiniProfiler.config.auto_inject = true
+
+  # Cấu hình host cho ngrok
+  config.hosts << "afd8-104-28-249-55.ngrok-free.app"
+  config.action_mailer.default_url_options = { host: 'afd8-104-28-249-55.ngrok-free.app' }
+  Rails.application.routes.default_url_options[:host] = 'afd8-104-28-249-55.ngrok-free.app'
+
+  config.action_mailer.preview_path = "#{Rails.root}/lib/mailer_previews"
 end
