@@ -40,3 +40,23 @@ en:
     create:
       success: "Login successful!"
       failure: "Invalid email or password"
+  password_resets:
+    new:
+      title: "Forgot password"
+      heading: "Forgot password"
+      email_label: "Email"
+      submit: "Submit"
+    edit:
+      title: "Reset password"
+      heading: "Reset password"
+      password: "New password"
+      password_confirmation: "Confirmation"
+      submit: "Update password"
+  sessions:
+    new:
+      email: "Email"
+      password: "Password"
+      forgot_password: "(forgot password)"
+      remember_me: "Remember me on this computer"
+      new_user: "New user? "
+      sign_up: "Sign up now!"

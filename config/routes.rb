@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   get "/account", to: "accounts#show", as: "account"
   resources :users, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :account_activations, only: [:edit]
-
+  resources :password_resets, only: %i(new create edit update)
 end
