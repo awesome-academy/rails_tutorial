@@ -40,3 +40,32 @@ en:
     create:
       success: "Login successful!"
       failure: "Invalid email or password"
+    new:
+      email: "Email"
+      password: "Password"
+      forgot_password: "(forgot password)"
+      remember_me: "Remember me on this computer"
+      new_user: "New user? "
+      sign_up: "Sign up now!"
+  password_resets:
+    new:
+      title: "Forgot password"
+      heading: "Forgot password"
+      email_label: "Email"
+      submit: "Submit"
+    edit:
+      title: "Reset password"
+      heading: "Reset password"
+      password: "New password"
+      password_confirmation: "Confirmation"
+      submit: "Update password"
+  micropost:
+    delete: "Delete"
+    confirm_delete: "Are you sure?"
+    ago: "ago"
+  users_show:
+    view_profile: "View profile"
+    microposts:
+      title: "Microposts (%{count})"
+      no_posts_current: "You haven't posted anything yet."
+      no_posts_other: "This user hasn't posted anything yet."

@@ -1,0 +1,11 @@
+<% microposts.each do |micropost| %>
+  <div class="micropost">
+    <p>
+      <strong><%= micropost.user.name %></strong>
+      <span class="timestamp">
+        <%= time_ago_in_words(micropost.created_at) %> ago
+      </span>
+    </p>
+    <p><%= micropost.content %></p>
+  </div>
+<% end %>

@@ -4,16 +4,18 @@ class UsersController < ApplicationController
           before_action :find_user, only: [:edit, :update]
           before_action :correct_user, only: [:edit, :update]
 
-
           def index
             @pagy, @users = pagy(User.all, items: 10)
           end
 
-            def show
-                @user = User.find_by id: params[:id]
-                unless @user
-                flash[:error] = "User not found."
-                redirect_to root_path
+          def show
+            @user = User.find_by(id: params[:id])
+            if @user.nil?
+              flash[:error] = "User not found."
+              redirect_to root_path
+            else
+              @pagy, @microposts = pagy(@user.microposts.order(created_at: :desc), items: 5)
+              @micropost = current_user.microposts.build if logged_in? && current_user == @user
             end
           end
 
