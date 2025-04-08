@@ -1,0 +1,5 @@
+<h1>Microposts</h1>
+<%= render 'form', micropost: current_user.microposts.build %>
+<div id="microposts">
+  <%= render @microposts %>
+</div>
