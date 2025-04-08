@@ -5,8 +5,10 @@ import "bootstrap"
 import "jquery"
 import "./javascript"
 import Rails from "@rails/ujs"
+import * as ActiveStorage from "@rails/activestorage"
+import "channels"
 Rails.start();
-
+ActiveStorage.start()
 document.addEventListener("turbo:load", () => {
   Rails.confirm = (message) => {
     return confirm(message);

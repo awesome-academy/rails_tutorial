@@ -3,10 +3,13 @@ class User < ApplicationRecord
     validate :birthday_within_last_100years, if: -> { birthday.present? }
     attr_accessor :remember_token, :activation_token, :reset_token
     before_create :create_activation_digest # Tạo activation digest trước khi lưu vào DB
-
+    has_many :microposts, dependent: :destroy
     def User.digest(string)
         cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
         BCrypt::Password.create(string, cost: cost)
+    end
+    def feed
+        microposts
     end
 
     def self.new_token

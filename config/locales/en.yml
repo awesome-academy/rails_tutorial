@@ -60,3 +60,13 @@ en:
       remember_me: "Remember me on this computer"
       new_user: "New user? "
       sign_up: "Sign up now!"
+  micropost:
+    delete: "Delete"
+    confirm_delete: "Are you sure?"
+    ago: "ago"
+  users_show:
+    view_profile: "View profile"
+    microposts:
+      title: "Microposts (%{count})"
+      no_posts_current: "You haven't posted anything yet."
+      no_posts_other: "This user hasn't posted anything yet."

@@ -1,16 +1,14 @@
 <% provide(:title, "Home") %>
 
-<!-- Phần nền xám nhạt + căn giữa -->
 <div class="bg-light w-100 py-5">
   <div class="text-center">
-  <h1 class="display-4 fw-bold"><%= t("pages.home.welcome_message") %></h1>
-  <p>
-    <%= t("pages.home.description") %>
-    <a href="https://www.railstutorial.org/">
-      <%= t("pages.home.rails_tutorial") %>
-    </a>
-  </p>
-  <%= link_to t("pages.home.sign_up"), "#", class: "btn btn-primary btn-lg" %>
-  
+    <h1 class="display-4 fw-bold"><%= t("pages.home.welcome_message") %></h1>
+    <p>
+      <%= t("pages.home.description") %>
+      <a href="https://www.railstutorial.org/">
+        <%= t("pages.home.rails_tutorial") %>
+      </a>
+    </p>
+    <%= link_to t("pages.home.sign_up"), signup_path, class: "btn btn-primary btn-lg" %>
   </div>
 </div>
