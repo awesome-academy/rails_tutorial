@@ -7,7 +7,6 @@ class MicropostsController < ApplicationController
       flash[:success] = "Micropost created!"
       redirect_to root_url
     else
-      # Nếu form trên trang Home, ta cần render lại trang Home với các biến cần thiết.
       @feed_items = current_user.microposts.newest.paginate(page: params[:page], per_page: 5)
       render 'pages/home'
     end

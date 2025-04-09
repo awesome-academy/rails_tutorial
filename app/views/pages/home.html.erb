@@ -9,6 +9,8 @@
         <%= t("pages.home.rails_tutorial") %>
       </a>
     </p>
-    <%= link_to t("pages.home.sign_up"), signup_path, class: "btn btn-primary btn-lg" %>
+    <% unless logged_in? %>
+      <%= link_to t("pages.home.sign_up"), signup_path, class: "btn btn-primary btn-lg" %>
+    <% end %>
   </div>
 </div>

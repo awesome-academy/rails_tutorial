@@ -1,8 +1,9 @@
-<% microposts.each do |micropost| %>
-  <div class="micropost">
+<% @microposts.each do |micropost| %>
+   <%= render micropost %>
+  <div class="micropost mb-3 p-3 border rounded">
     <p>
-      <strong><%= micropost.user.name %></strong>
-      <span class="timestamp">
+      <strong><%= link_to micropost.user.name, micropost.user %></strong>
+      <span class="timestamp text-muted">
         <%= time_ago_in_words(micropost.created_at) %> ago
       </span>
     </p>

@@ -69,3 +69,14 @@ en:
       title: "Microposts (%{count})"
       no_posts_current: "You haven't posted anything yet."
       no_posts_other: "This user hasn't posted anything yet."
+    following:
+      title: "Following"
+    followers:
+      title: "Followers"
+  micropost:
+    delete: "Delete"
+    confirm_delete: "Are you sure?"
+    ago: "ago"
+  relationships:
+    follow: "Follow"
+    unfollow: "Unfollow"

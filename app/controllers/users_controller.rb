@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
           before_action :logged_in_user, only:[:edit, :update]
           before_action :correct_user, only: [:edit, :update]
-          before_action :find_user, only: [:edit, :update]
+          before_action :find_user, only: [:edit, :update, :following, :followers]
           before_action :correct_user, only: [:edit, :update]
 
           def index
-            @pagy, @users = pagy(User.all, items: 10)
+            @pagy, @users = pagy(User.order(:name), items: 10)
           end
 
           def show
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
               flash[:error] = "User not found."
               redirect_to root_path
             else
-              @pagy, @microposts = pagy(@user.microposts.order(created_at: :desc), items: 5)
+              @pagy, @microposts = pagy(@user.feed.order(created_at: :desc), items: 5)
               @micropost = current_user.microposts.build if logged_in? && current_user == @user
             end
           end
@@ -52,6 +52,7 @@ class UsersController < ApplicationController
                 render :edit
               end
             end
+
             def destroy
               @user = User.find_by(id: params[:id])
               if @user
@@ -66,7 +67,16 @@ class UsersController < ApplicationController
                 redirect_to users_path
               end
             end
-
+            def following
+              @title = "Following"
+              @pagy, @users = pagy @user.following, items: 10
+              render :show_follow
+            end
+            def followers
+              @title = "Followers"
+              @pagy, @users =pagy @user.followers, items: 10
+              render :show_follow
+            end
           private
 
             def user_params

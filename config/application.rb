@@ -13,7 +13,6 @@ module RailsTutorial
     config.logger = ActiveSupport::Logger.new(STDOUT)
     config.log_level = :debug
 
-
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

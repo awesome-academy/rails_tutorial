@@ -83,3 +83,31 @@ body {
     border-bottom: 1px solid $gray-lighter;
   }
 }  
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* khoảng cách giữa Following và Followers */
+  margin-top: 10px;
+}
+
+.stats a {
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.stats a:hover {
+  transform: scale(1.05);
+  color: #007bff;
+}
+
+.stat {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#following, #followers {
+  font-size: 24px;
+}

@@ -9,6 +9,21 @@
                   @user,
                   class: "btn btn-outline-primary btn-sm" %>
     </section>
+    <section class="stats mb-3">
+      <%= link_to following_path(@user) do %>
+        <strong id="following" class="stat">
+          <%= @user.following.count %>
+        </strong>
+        <%= t("users_show.stats.following") %>
+      <% end %>
+      <%= link_to followers_path(@user) do %>
+        <strong id="followers" class="stat">
+          <%= @user.followers.count %>
+        </strong>
+        <%= t("users_show.stats.followers") %>
+      <% end %>
+    </section>
+
     <% if logged_in? && current_user?(@user) %>
       <section class="micropost_form mb-3">
         <%= render 'microposts/form', micropost: @micropost %>
@@ -17,6 +32,8 @@
   </aside>
 
   <div class="col-md-8">
+  <%= render "follow_form", user: @user if logged_in? && current_user != @user %>
+
     <h3>
       <%= t("users_show.microposts.title", count: @pagy.count) %>
     </h3>
@@ -28,10 +45,11 @@
       </div>
     <% else %>
       <p>
-        <% key = current_user?(@user) ? "users_show.microposts.no_posts_current" :
-                                       "users_show.microposts.no_posts_other" %>
+        <% key = current_user?(@user) ?
+            "users_show.microposts.no_posts_current" :
+            "users_show.microposts.no_posts_other" %>
         <%= t(key) %>
       </p>
-    <% end %>
+<% end %>
   </div>
 </div>
