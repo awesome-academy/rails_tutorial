@@ -1,0 +1,9 @@
+<li id="user_<%= user.id %>">
+              <%= gravatar_for(user, size: 50) %>
+               <%= link_to user.name, user_path(user) %>
+              <% if current_user.admin? && !current_user?(user) %> |
+              <%= form_with(model: user, method: :delete, data: { confirm: t("users.confirm_delete"), turbo: false }) do |form| %>
+        <%= form.submit t("users.delete"), class: "btn btn-danger" %>
+      <% end %>
+   <% end %>
+</li>

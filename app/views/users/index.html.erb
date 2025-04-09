@@ -1,0 +1,13 @@
+<% provide(:title, "All Users") %>
+
+<h1>All Users</h1>
+
+<ul class="users list-unstyled">
+  <%= render @users %>
+</ul>
+
+<% if @pagy.pages > 1 %> 
+  <div class="d-flex justify-content-center mt-4">
+    <%= pagy_bootstrap_nav(@pagy) %>
+  </div>
+<% end %>

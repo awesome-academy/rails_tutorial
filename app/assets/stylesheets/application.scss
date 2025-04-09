@@ -1,0 +1,15 @@
+@import "bootstrap";
+
+
+.navbar-brand {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+}
+
+/* Tăng kích cỡ chữ cho h1 */
+h1 {
+    font-size: 2.5rem;
+}
+
+@import "custom";

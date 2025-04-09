@@ -1,33 +1,82 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   "true": "foo"
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
+  pages:
+    home:
+      welcome_message: "Welcome to the Sample App"
+      description: "This is the home page for the sample application"
+      sign_up: "Sign up now!"
+      rails_tutorial: "Ruby on Rails Tutorial !"
+  layouts:
+    navbar:
+      brand: "SAMPLE APP"
+      home: "Home"
+      help: "Help"
+      account: "Account"
+      log_in: "Log in"
+      log_out: "Log out"
+      profile: "Profile"
+      settings: "Settings"
+  users:
+    edit:
+      title: "Edit user"
+      heading: "Update your profile"
+    form:
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Confirmation"
+      save: "Save changes"
+      change_avatar: "Change"
+    delete: "Delete"
+    confirm_delete: "Are you sure?"
+    errors:
+      birthday_old: "Birthday must be within the last 100 years"
+  pagy:
+    nav:
+      previous: "Previous"
+      next: "Next"
+      page: "Page %{page}"
+  sessions:
+    create:
+      success: "Login successful!"
+      failure: "Invalid email or password"
+    new:
+      email: "Email"
+      password: "Password"
+      forgot_password: "(forgot password)"
+      remember_me: "Remember me on this computer"
+      new_user: "New user? "
+      sign_up: "Sign up now!"
+  password_resets:
+    new:
+      title: "Forgot password"
+      heading: "Forgot password"
+      email_label: "Email"
+      submit: "Submit"
+    edit:
+      title: "Reset password"
+      heading: "Reset password"
+      password: "New password"
+      password_confirmation: "Confirmation"
+      submit: "Update password"
+  micropost:
+    delete: "Delete"
+    confirm_delete: "Are you sure?"
+    ago: "ago"
+  users_show:
+    view_profile: "View profile"
+    microposts:
+      title: "Microposts (%{count})"
+      no_posts_current: "You haven't posted anything yet."
+      no_posts_other: "This user hasn't posted anything yet."
+    following:
+      title: "Following"
+    followers:
+      title: "Followers"
+  micropost:
+    delete: "Delete"
+    confirm_delete: "Are you sure?"
+    ago: "ago"
+  relationships:
+    follow: "Follow"
+    unfollow: "Unfollow"
