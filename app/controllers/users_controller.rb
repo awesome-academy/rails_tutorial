@@ -67,16 +67,19 @@ class UsersController < ApplicationController
                 redirect_to users_path
               end
             end
+
             def following
               @title = "Following"
               @pagy, @users = pagy @user.following, items: 10
               render :show_follow
             end
+
             def followers
               @title = "Followers"
               @pagy, @users =pagy @user.followers, items: 10
               render :show_follow
             end
+
           private
 
             def user_params
@@ -101,6 +104,7 @@ class UsersController < ApplicationController
             flash[:error] = "You cannot edit this account"
             redirect_to root_url
           end
+
           def admin_user
             redirect_to root_path unless current_user.admin?
           end
