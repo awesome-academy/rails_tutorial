@@ -76,4 +76,5 @@ yarn-debug.log*
 .yarn-integrity
 config/database.yml
 config/application.yml
-
+log/
+tmp/
