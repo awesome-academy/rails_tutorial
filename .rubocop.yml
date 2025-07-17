@@ -167,7 +167,7 @@ Style/ClassCheck:
     - kind_of?
 
 Metrics/ClassLength:
-  CountComments: false  # count full line comments?
+  CountComments: false # count full line comments?
   Max: 100
 
 # Align with the style guide.
@@ -283,11 +283,11 @@ Style/LambdaCall:
     - braces
 
 Metrics/LineLength:
+Layout/LineLength:
   Max: 80
   AllowURI: true
   Exclude:
     - config/routes.rb
-
 
 Style/Next:
   # With `always` all conditions at the end of an iteration needs to be
@@ -314,7 +314,7 @@ Style/MethodDefParentheses:
     - require_no_parentheses
 
 Metrics/MethodLength:
-  CountComments: false  # count full line comments?
+  CountComments: false # count full line comments?
   Max: 10
 
 Naming/MethodName:
@@ -349,7 +349,12 @@ Style/PercentLiteralDelimiters:
 Naming/PredicateName:
   ForbiddenPrefixes:
     - get_
-
+NamePrefix:
+  - is_
+  - has_
+  - have_
+  - get_
+  
 Style/RaiseArgs:
   EnforcedStyle: exploded
   SupportedStyles:
