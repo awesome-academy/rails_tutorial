@@ -14,7 +14,7 @@ Layout/HashAlignment:
                  one line.
   Enabled: true
 
-Layout/Layout/ParameterAlignment:
+Layout/ParameterAlignment:
   Description: >-
                  Align the parameters of a method call if they span more
                  than one line.
@@ -257,7 +257,7 @@ Style/LineEndConcatenation:
                  line end.
   Enabled: true
 
-Metrics/LineLength:
+Layout/LineLength:
   Description: "Limit lines to 80 characters."
   Enabled: true
 
@@ -353,7 +353,7 @@ Style/PerlBackrefs:
   Description: "Avoid Perl-style regex back references."
   Enabled: true
 
-Naming/PredicateName:
+Naming/PredicatePrefix:
   Description: "Check the names of predicate methods."
   Enabled: true
 
@@ -508,17 +508,17 @@ Layout/TrailingEmptyLines:
   Enabled: true
 
 Style/TrailingCommaInArguments:
-  Description: 'Checks for trailing comma in argument lists.'
-  StyleGuide: '#no-trailing-params-comma'
+  Description: "Checks for trailing comma in argument lists."
+  StyleGuide: "#no-trailing-params-comma"
   Enabled: true
 
 Style/TrailingCommaInArrayLiteral:
-  Description: 'Checks for trailing comma in array literals.'
-  StyleGuide: '#no-trailing-array-commas'
+  Description: "Checks for trailing comma in array literals."
+  StyleGuide: "#no-trailing-array-commas"
   Enabled: true
 
 Style/TrailingCommaInHashLiteral:
-  Description: 'Checks for trailing comma in hash literals.'
+  Description: "Checks for trailing comma in hash literals."
   Enabled: true
 
 Layout/TrailingWhitespace:
@@ -620,10 +620,6 @@ Lint/EmptyInterpolation:
 
 Layout/EndAlignment:
   Description: "Align ends correctly."
-  Enabled: true
-
-Style/EndBlock:
-  Description: "END blocks should not be placed inside method definitions."
   Enabled: true
 
 Lint/EnsureReturn:
