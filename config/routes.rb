@@ -6,6 +6,5 @@ Rails.application.routes.draw do
     get "/static_pages/help",    to: "static_pages#help",    as: "help"
     get "/static_pages/contact", to: "static_pages#contact", as: "contact"
 
-    resources :products
   end
 end
